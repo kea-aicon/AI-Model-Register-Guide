@@ -1,0 +1,74 @@
+﻿@page "/chatbot"
+@inject NavigationManager NavigationManager
+@inject IConfiguration Configuration
+@inject IJSRuntime JS
+@inject RequestInterceptor _requestInterceptor
+@using BlazorChatApp.Common
+
+<div class="content">
+    <div class="chat-card">
+        <h2>Hi</h2>
+
+        <div class="chat-container" @ref="ChatContainerRef">
+            <div class="chat-content-container" @ref="ChatContainerRef">
+                @if (_messages != null)
+                {
+                    foreach (var message in _messages)
+                    {
+                        <MudChat ChatPosition="@(message.IsUser? ChatBubblePosition.End: ChatBubblePosition.Start)">
+                            <MudChatBubble Color="@(message.IsUser? Color.Primary: Color.Secondary)">
+                                @if (!message.IsFile)
+                                {
+                                    <MudMarkdown Value="@message.Text"></MudMarkdown>
+                                }
+                                else
+                                {
+                                    @((MarkupString)message.Text)
+                                }
+                            </MudChatBubble>
+                        </MudChat>
+                    }
+                }
+                @if (IsLoading)
+                {
+                    <MudChat ChatPosition="ChatBubblePosition.Start">
+                        <MudChatBubble Color="Color.Secondary">
+                            <em>
+                                <span class="dot">.</span>
+                                <span class="dot">.</span>
+                                <span class="dot">.</span>
+                                <span class="dot">.</span>
+                                <span class="dot">.</span>
+                                <span class="dot">.</span>
+                            </em>
+                        </MudChatBubble>
+                    </MudChat>
+                }
+            </div>
+            <div class="chat-input">
+                <label for="file-input" class="upload-button" disabled="@IsLoading">
+                    <img src="images/attach-file.png" class="upload-icon" alt="Upload" />
+                </label>
+
+                <InputFile id="file-input" style="display:none" OnChange="OnFileSelected" multiple />
+
+                <ul class="file-list">
+                    @foreach (var file in SelectedFilesList)
+                    {
+                        <li class="file-name">@file.Name</li>
+                    }
+                </ul>
+                <input @bind="MessageInput" @onkeyup="HandleEnterKey" placeholder="How can I help you?" />
+                <button class="send-button" @onclick="CallChatbot" disabled="@(IsLoading || string.IsNullOrWhiteSpace(MessageInput))">
+                    <img src="images/send.png" alt="Send" />
+                </button>
+            </div>
+
+            <div class="nav-bar">
+                <a href="/" class="nav-button ">🏠</a>
+                <a href="/chatbot" class="nav-button active">🤖</a>
+            </div>
+        </div>
+    </div>
+</div>
+
