@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="chat-container">
+        <div class="chat-content-container" #chatContentContainer>
+            <div class="chat-messages" *ngFor="let message of messageOutputAll; let i = index">
+                <markdown class="message" [ngClass]="{'sent': i % 2 === 0, 'received': i % 2 !== 0}" [data]="message">
+                </markdown>
+            </div>
+            <div class="loading" *ngIf="isLoading">
+                <div class="spinner"><span></span></div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <!-- Upload file button -->
+            <button class="upload-button" (click)="fileInput.click()" [disabled]="isLoading">
+                <img src="../../../assets/images/attach-file.png" alt="Upload" class="upload-icon">
+            </button>
+            <input type="file" id="file-input" (change)="onFileSelected($event)" #fileInput style="display: none;">
+            <ul class="file-list">
+                <li *ngFor="let selectedFile of selectedFilesList" class="file-name">
+                    {{ selectedFile.name }}
+                </li>
+            </ul>
+
+            <input type="text" placeholder="How can I help you?" [(ngModel)]="messageInput"
+                (keyup.enter)="callChatbot()">
+            <button [disabled]="isLoading || messageInput.length === 0" class="str-chat__send-button"
+                (click)="callChatbot()">
+                <img src="../../../assets/images/send.png" alt="Send" class="str-chat__icon str-chat__icon--send">
+            </button>
+        </div>
+    </div>
+</div>

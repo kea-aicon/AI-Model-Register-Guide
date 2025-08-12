@@ -6,6 +6,12 @@
 /e2e/test-output/
 /.angular/
 .angular/
+node_modules
+.idea
+dist
+.vscode
+.angular
+coverage
 
 # Node modules and dependency files
 /node_modules/
