@@ -1,112 +1,22 @@
 .wrapper {
     width: 100%;
     height: 100vh;
-    position: relative;
+    padding: 64px 240px;
     display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
     align-items: center;
     justify-content: center;
-
-    &-box {
-        background-color: rgb(255 255 255 / 75%);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        border-radius: 16px;
-        width: 960px;
-        height: 600px;
-        max-width: 100%;
-        transition: all 0.3s ease;
-        position: relative;
-
-        &.min {
-            width: 400px;
-        }
-
-        &.phone {
-            width: 375px;
-            height: 812px;
-        }
-
-        @media (max-width: 768px) {
-            width: 100%;
-            height: 100vh;
-            border-radius: 0;
-        }
-    }
-}
-
-.gradient-background {
-    background: hsla(228, 17%, 53%, 1);
-
-    background: linear-gradient(90deg, hsla(228, 17%, 53%, 1) 0%, hsla(229, 28%, 88%, 1) 100%);
-
-    background: -moz-linear-gradient(90deg, hsla(228, 17%, 53%, 1) 0%, hsla(229, 28%, 88%, 1) 100%);
-
-    background: -webkit-linear-gradient(90deg, hsla(228, 17%, 53%, 1) 0%, hsla(229, 28%, 88%, 1) 100%);
-
-    background-size: 180% 180%;
-}
-
-.setting-device {
-    position: fixed;
-    left: 8px;
-    background-color: #Fff;
-    bottom: 40%;
-    border-radius: 6px;
-
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        padding: 8px;
-
-        li {
-            button {
-                background: none;
-                border: 0;
-                cursor: pointer;
-
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                &.active {
-                    svg {
-                        path {
-                            fill: #000;
-                            stroke: #Fff;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-::ng-deep {
-    :root {
-        --grid-item-width: calc(25% - 12px);
-        --grid-max-col: var(--grid-item-width) var(--grid-item-width) var(--grid-item-width) var(--grid-item-width);
-        --grid-gap: 16px;
-        --padding-content: 20px 24px 116px;
-        --nav-width: 70%;
-        --fz-title: 18px;
-        --fz-key-val: 32px;
-        --pd-card: 16px 20px;
-        --icon-card-sz: 40px;
-    }
-
-    .wrapper-box {
-        &.phone {
-            --grid-item-width: calc(50% - 4px);
-            --grid-max-col: var(--grid-item-width) var(--grid-item-width);
-            --grid-gap: 8px;
-            --padding-content: 16px 10px 116px;
-            --nav-width: 90%;
-            --fz-title: 15px;
-            --fz-key-val: 24px;
-            --pd-card: 12px 14px;
-            --icon-card-sz: 36px;
-        }
-    }
 }

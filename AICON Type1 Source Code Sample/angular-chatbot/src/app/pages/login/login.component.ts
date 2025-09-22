@@ -14,10 +14,19 @@ export class LoginComponent {
   ) { }
 
   /**
-   * Redirect to the login page of the KAB
+   * Redirect to the login page of the AICON
    */
   actionLogin() {
-    const url = this.appConfigService.get('kabLogin') + "?client_id=" + this.appConfigService.get('clientID') + "&redirect_uri=" + window.location.origin;
+    // Build the login URL from configuration
+    // Example: https://aicon.or.kr/auth/login 
+    const url = this.appConfigService.get('aiConLogin') 
+    // Add the client_id query parameter (identifies the application), value clientID get from configuration
+    + "?client_id=" + this.appConfigService.get('clientID') 
+    // Add the redirect_uri query parameter (where the login server will redirect after success)
+    + "&redirect_uri=" + window.location.origin;
+
+    // Open the login URL in the same browser tab ("_self")
+    // This effectively redirects the user to the login page
     window.open(url, "_self");
   }
 }

@@ -16,13 +16,13 @@ export class AuthService {
   ) { }
 
   /**
-   * Authenticate the user using the authorization code received from the KAB
+   * Authenticate the user using the authorization code received from the AICON
    * @param authorizationCode : string
    * @returns : Observable<AuthenticationResponse>
    */
   authenticate(authorizationCode: string): Observable<AuthenticationResponse> {
     // Define the URL for the authentication endpoint
-    const url = this.appConfigService.get('kABApiEndpoint') + API_ENDPOINT.AUTH;
+    const url = this.appConfigService.get('aiConApiEndpoint') + API_ENDPOINT.AUTH;
 
     // Set the headers for the request
     const headers: HttpHeaders = new HttpHeaders({

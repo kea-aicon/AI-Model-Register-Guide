@@ -38,7 +38,7 @@ namespace BlazorChatApp.Service.ChatBot
             try
             {
                 // Define the URL for the authentication endpoint
-                var url = _configuration["DomainSettings:kABApiEndpoint"] + Constants.Auth;
+                var url = _configuration["DomainSettings:aiconApiEndpoint"] + Constants.Auth;
 
                 // Set the parameters for the request
                 var parameters = new Dictionary<string, string>

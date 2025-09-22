@@ -5,7 +5,6 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .chat-container {
@@ -16,17 +15,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     transition: transform 0.3s ease;
-}
-
-.chat-header {
-    padding: 15px;
-    background: #000;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 2px solid #fff;
-    border-radius: 15px;
+    gap: 32px;
 }
 
 .chat-messages {
@@ -72,39 +61,6 @@ body {
     bottom: -5px;
 }
 
-
-.chat-input input {
-    width: calc(100% - 45px);
-    outline: none;
-    line-height: 24px;
-    font-size: 16px;
-    padding: 8px 16px;
-    border-radius: 18px;
-    border: 1px solid rgb(219, 221, 225);
-    transition: border-color 0.3s ease;
-    height: 38px;
-}
-
-
-.chat-input button {
-    width: 45px;
-    height: 38px;
-    line-height: 36px;
-    font-size: 32px;
-    border: none;
-    cursor: pointer;
-    background: none;
-    color: rgb(180, 183, 187);
-
-    div {
-        justify-content: center;
-    }
-}
-
-.chat-input button:hover {
-    transform: scale(1.05);
-}
-
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -118,13 +74,15 @@ body {
 }
 
 .content {
-    height: calc(100% - 156px);
+    height: calc(100vh - 300px);
     overflow: auto;
     scrollbar-width: none;
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 100;
+    width: 800px;
+    margin: auto;
 
     .chat-container {
         width: 100%;
@@ -199,7 +157,7 @@ body {
     }
 }
 
-::ng-deep .received {
+::ng-deep .chat-messages {
     h2 {
         font-size: 1.2em;
         line-height: 1.3em;
@@ -214,7 +172,7 @@ body {
     li {
         font-size: 15px;
         line-height: 24px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     ul {
@@ -224,28 +182,30 @@ body {
     }
 }
 
-.chat-input {
+.chat-group {
     display: flex;
+    height: 48px;
+    padding-right: 4px;
     align-items: center;
-    padding: 10px;
-    border-top: 1px solid #e6e6e6;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #E6EAED;
+    background-color: #FFF;
 }
 
 .upload-button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid #e0e0e0;
-    background-color: #f5f5f5;
     display: flex;
-    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 2px 0px;
     justify-content: center;
-    cursor: pointer;
-    margin-right: 10px;
-
-    &:hover {
-        background-color: #e0e0e0;
-    }
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    background-color: #FFF;
+    border: none;
 }
 
 .upload-icon {
@@ -263,38 +223,21 @@ body {
     color: #666;
 }
 
-input[type="text"] {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #e0e0e0;
-    border-radius: 20px;
-    margin-right: 10px;
-}
-
-.str-chat__send-button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: #007bff;
-    border: none;
+.send-button {
     display: flex;
-    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 2px 0px;
     justify-content: center;
-    cursor: pointer;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    border: none;
+    background-color: #000;
 }
 
-.str-chat__send-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-.str-chat__icon--send {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 12px solid white;
-    margin-left: 3px;
-    width: 50px;
-    height: 50px;
+.send-button:disabled {
+    background-color: #E6EAED;
 }
 
 .message a {
@@ -315,4 +258,36 @@ input[type="text"] {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.chat-title {
+    display: flex;
+    padding: 32px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: #292B2C;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.chat-input {
+    display: flex;
+    padding: 0px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+    border: 0px solid;
+    border-color: #E6EAED;
+    outline: none;
+    border-radius: 8px;
+}
+
+.select-file {
+    display: none;
 }

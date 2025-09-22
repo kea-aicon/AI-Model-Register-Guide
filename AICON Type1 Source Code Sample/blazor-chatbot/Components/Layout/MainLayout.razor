@@ -4,7 +4,15 @@
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
-@Body
+<div class="wrapper">
+    <div class="logo">
+        <img src="/images/aicon-logo.svg" alt="AICON Logo">
+    </div>
+    <div class="content">
+        @Body
+    </div>
+</div>
+
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.

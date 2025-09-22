@@ -1,3 +1,6 @@
+<div class="chat-title">
+    Can I help you in anyway?
+</div>
 <div class="content">
     <div class="chat-container">
         <div class="chat-content-container" #chatContentContainer>
@@ -9,23 +12,28 @@
                 <div class="spinner"><span></span></div>
             </div>
         </div>
-        <div class="chat-input">
-            <!-- Upload file button -->
+        <div class="chat-group">
+            <input type="text" class="chat-input" placeholder="Type something" [(ngModel)]="messageInput"
+                (keyup.enter)="callChatbot()">
             <button class="upload-button" (click)="fileInput.click()" [disabled]="isLoading">
-                <img src="../../../assets/images/attach-file.png" alt="Upload" class="upload-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path
+                        d="M13 7.47266H11V11.4727H7V13.4727H11V17.4727H13V13.4727H17V11.4727H13V7.47266ZM12 2.47266C6.48 2.47266 2 6.95266 2 12.4727C2 17.9927 6.48 22.4727 12 22.4727C17.52 22.4727 22 17.9927 22 12.4727C22 6.95266 17.52 2.47266 12 2.47266ZM12 20.4727C7.59 20.4727 4 16.8827 4 12.4727C4 8.06266 7.59 4.47266 12 4.47266C16.41 4.47266 20 8.06266 20 12.4727C20 16.8827 16.41 20.4727 12 20.4727Z"
+                        fill="#8E9296" />
+                </svg>
             </button>
-            <input type="file" id="file-input" (change)="onFileSelected($event)" #fileInput style="display: none;">
             <ul class="file-list">
                 <li *ngFor="let selectedFile of selectedFilesList" class="file-name">
                     {{ selectedFile.name }}
                 </li>
             </ul>
-
-            <input type="text" placeholder="How can I help you?" [(ngModel)]="messageInput"
-                (keyup.enter)="callChatbot()">
-            <button [disabled]="isLoading || messageInput.length === 0" class="str-chat__send-button"
-                (click)="callChatbot()">
-                <img src="../../../assets/images/send.png" alt="Send" class="str-chat__icon str-chat__icon--send">
+            <input type="file" class="select-file" id="file-input" (change)="onFileSelected($event)" #fileInput>
+            <button [disabled]="isLoading || messageInput.length === 0" class="send-button" (click)="callChatbot()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <path
+                        d="M4 12.4727L5.41 13.8827L11 8.30266V20.4727H13V8.30266L18.58 13.8927L20 12.4727L12 4.47266L4 12.4727Z"
+                        fill="#B1B5BA" />
+                </svg>
             </button>
         </div>
     </div>

@@ -5,9 +5,17 @@
 <PageTitle>Login</PageTitle>
 
 <div class="login">
-    <div class="login-card">
-        <img src="/images/microchip.png" alt="Doctors" style="max-width:300px; max-height:300px"/>
-        <button @onclick="ActionLogin">Login with KAB</button>
+    <img src="/images/login.svg" alt="Login" class="login-image">
+    <div class="title">We need access to AICON</div>
+    <div>
+        <button class="button-login" @onclick="ActionLogin">
+            <img src="/images/aicon-logo.svg" alt="AICON Logo" class="aicon-logo">
+            Continue with AICON
+        </button>
+    </div>
+    <div class="terms">
+        By clicking “Continue with AICON”, you acknowleadge that you have read and understood and agree to AICON’s Terms
+        & Conditions and Privacy Policy
     </div>
 </div>
 
@@ -15,15 +23,15 @@
 @using Microsoft.AspNetCore.WebUtilities
 @code {
     /// <summary>
-    /// Redirect to the login page of the KAB
+    /// Redirect to the login page of the aicon
     /// </summary>
     /// <returns></returns>
     public async Task ActionLogin()
     {
-        var kabLogin = Configuration["DomainSettings:kabLogin"];
+        var aiconLogin = Configuration["DomainSettings:aiconLogin"];
         var clientId = Configuration["DomainSettings:clientID"];
         var redirectUri = NavigationManager.BaseUri.TrimEnd('/');
-        var url = $"{kabLogin}?client_id={clientId}&redirect_uri={redirectUri}";
+        var url = $"{aiconLogin}?client_id={clientId}&redirect_uri={redirectUri}";
         NavigationManager.NavigateTo(url, forceLoad: true);
     }
 }

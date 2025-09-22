@@ -2,7 +2,7 @@
     
     "apiEndPoint": "https://api.provider-chatbot.or.kr",
     
-    "kABApiEndpoint": "https://api.aicon.or.kr/api",
+    "aiConApiEndpoint": "https://api.aicon.or.kr/api",
     
     "clientID": "",
     
@@ -12,5 +12,5 @@
     
     "refreshGrantType": "refresh_token",
     
-    "kabLogin": "https://aicon.or.kr/auth/login"
+    "aiConLogin": "https://aicon.or.kr/auth/login"
 }

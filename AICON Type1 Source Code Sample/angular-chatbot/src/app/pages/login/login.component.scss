@@ -1,56 +1,64 @@
 .login {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
     flex-direction: column;
-    margin: auto;
-    width: 300px;
-    max-width: 100%;
-    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
 
-    img {
-        max-width: 100%;
-    }
+.title {
+    color: #292B2C;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135%;
+}
 
-    .form-group {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+.button-login {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #EDF5FA;
+    width: 400px;
+    border: none;
+    color: #003153;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
 
-        input {
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            color: #000;
-            font-size: 14px;
-            outline: none;
-            box-sizing: border-box;
-            text-align: center;
-            font-family: inherit;
-            font-weight: 500;
+.aicon-logo {
+    display: flex;
+    width: 87px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 29/8;
+}
 
-            &:focus {
-                border-color: #000000;
-            }
-        }
+.login-image {
+    display: flex;
+    width: 256px;
+    height: 256px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
 
-        button {
-            width: 100%;
-            padding: 16px 0;
-            border: none;
-            text-transform: uppercase;
-            border-radius: 8px;
-            outline: none;
-            font-weight: 800;
-            letter-spacing: 3px;
-            color: #fff;
-            background: #000000;
-            cursor: pointer;
-            box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.36);
-            font-family: inherit;
-        }
-    }
+.terms {
+    width: 400px;
+    color: #8E9296;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
 }

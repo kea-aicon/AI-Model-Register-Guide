@@ -1,45 +1,64 @@
-﻿body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #ccd1e4, #aeb6cf);
-}
-
-.login {
+﻿.login {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
 }
 
-.login-card {
-    background-color: #f4f4f7;
-    padding: 2rem;
-    border-radius: 15px;
+.title {
+    color: #292B2C;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    max-width: 360px;
-    width: 100%;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135%;
 }
 
-    .login-card img {
-        max-width: 220px;
-        margin-bottom: 2rem;
-    }
+.button-login {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #EDF5FA;
+    width: 400px;
+    border: none;
+    color: #003153;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
 
-    .login-card button {
-        background-color: black;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.2s ease-in-out;
-        letter-spacing: 1px;
-    }
+.aicon-logo {
+    display: flex;
+    width: 87px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 29/8;
+}
 
-        .login-card button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-        }
+.login-image {
+    display: flex;
+    width: 256px;
+    height: 256px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.terms {
+    width: 400px;
+    color: #8E9296;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}

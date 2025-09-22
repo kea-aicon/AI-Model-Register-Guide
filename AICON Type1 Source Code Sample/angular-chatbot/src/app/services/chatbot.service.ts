@@ -16,29 +16,36 @@ export class ChatbotService {
 
   /**
    * Send message to the chatbot and get the response
-   * @param messageInput : string
+   * @param messageInput : string, that message content user chat
    * @returns : Observable<ChatbotResponse>
    */
   sendMessage(messageInput: string): Observable<ChatbotResponse> {
     // Define the URL for the chatbot endpoint
-    const url = this.appConfigService.get('apiEndPoint') + API_ENDPOINT.CHAT;
+    // Get domain chatbot from config (configs.json), Example: https://api.provider-chatbot.or.kr
+    const url = this.appConfigService.get('apiEndPoint') 
+    //Get endpoint api chatbot from constant, Example: /chat
+    + API_ENDPOINT.CHAT;
 
     // Create a new FormData object to send the file and message
     const formData = new FormData();
     formData.append('prompt', messageInput);
 
+    //Call api and return response data
     return this.httpClient.post<ChatbotResponse>(url, formData);
   }
 
   /**
    * Upload file to the server and get the processed file
-   * @param files : File
-   * @param messageInput : string
+   * @param files : Attach file user upload
+   * @param messageInput : string, that message content user chat
    * @returns : Observable<Blob>
    */
   uploadFile(files: File[], messageInput: string): Observable<Blob> {
     // Define the URL for the file processing endpoint
-    const url = this.appConfigService.get('apiEndPoint') + API_ENDPOINT.CHAT;
+    // Get domain chatbot from config (configs.json), Example: https://api.provider-chatbot.or.kr
+    const url = this.appConfigService.get('apiEndPoint') 
+    //Get endpoint api chatbot from constant, Example: /chat
+    + API_ENDPOINT.CHAT;
 
     // Create a new FormData object to send the file and message
     const formData = new FormData();
@@ -49,6 +56,7 @@ export class ChatbotService {
 
     formData.append('prompt', messageInput);
 
+    //Call api and return response data, data is file content
     return this.httpClient.post(url, formData, {
       responseType: 'blob'
     });

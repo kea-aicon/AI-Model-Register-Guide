@@ -119,7 +119,7 @@ function getRefreshToken(): Observable<AuthenticationResponse> {
     const appConfigService = inject(AppConfigService);
 
     // Define the URL for the refresh token endpoint
-    const url = appConfigService.get('kABApiEndpoint') + API_ENDPOINT.AUTH;
+    const url = appConfigService.get('aiConApiEndpoint') + API_ENDPOINT.AUTH;
 
     const headers: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'

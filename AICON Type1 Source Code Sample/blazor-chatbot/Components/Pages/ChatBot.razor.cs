@@ -10,6 +10,8 @@ namespace BlazorChatApp.Components.Pages
 {
     public partial class ChatBot
     {
+        private ElementReference chatContentRef;
+
         [Inject] public IChatBotService ChatBotService { get; set; }
         private ElementReference ChatContainerRef;
         private ElementReference fileInputRef;
@@ -88,6 +90,16 @@ namespace BlazorChatApp.Components.Pages
                         Text = reply.Item1
                     });
                 }
+                else
+                {
+                    // If you cannot call chat, then return the error message
+                    _messages.Add(new ChatMessage
+                    {
+                        IsFile = false,
+                        IsUser = false,
+                        Text = "There is an error occured. Please try again."
+                    });
+                }
             }
             // Otherwise, send just the message
             else
@@ -101,6 +113,16 @@ namespace BlazorChatApp.Components.Pages
                         IsFile = false,
                         IsUser = false,
                         Text = reply.Item1
+                    });
+                }
+                else
+                {
+                    // If you cannot call chat, then return the error message
+                    _messages.Add(new ChatMessage
+                    {
+                        IsFile = false,
+                        IsUser = false,
+                        Text = "There is an error occured. Please try again."
                     });
                 }
             }
