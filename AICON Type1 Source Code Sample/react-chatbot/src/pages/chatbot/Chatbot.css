@@ -1,0 +1,237 @@
+.chat-container {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    gap: 32px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages p,
+.chat-messages li {
+    font-size: 15px;
+    line-height: 24px;
+    margin-block: 0;
+}
+
+.message {
+    max-width: 75%;
+    color: #000;
+    font-size: 15px;
+    border-radius: 18px !important;
+    line-height: 18px;
+    padding: 8px 16px !important;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.message.sent {
+    background: rgb(224, 240, 255);
+    align-self: flex-end;
+}
+
+.message.received {
+    background: rgb(233, 234, 237);
+    align-self: flex-start;
+}
+
+.message::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: -5px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-page {
+    height: calc(100vh - 200px);
+    overflow: auto;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 100;
+    width: 800px;
+    margin: auto;
+}
+
+.chat-content-container{
+    height: 100%;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-group {
+    display: flex;
+    max-height: 48px;
+    height: 100%;
+    padding-right: 4px;
+    align-items: center;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #E6EAED;
+    background-color: #FFF;
+}
+
+.upload-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 2px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    background-color: #FFF;
+    border: none;
+    cursor: pointer;
+}
+
+.send-button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 2px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    border: none;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.send-button:disabled {
+    background-color: #E6EAED;
+}
+
+.file-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-name {
+    margin-right: 10px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.chat-title {
+    display: flex;
+    padding: 32px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: #292B2C;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.chat-input {
+    display: flex;
+    padding: 0px 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+    border: 0px solid;
+    border-color: #E6EAED;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.chat-input::placeholder {
+    font-size: 16px;
+}
+
+.select-file {
+    display: none;
+}
+
+.loading {
+    padding: 20px;
+    align-self: flex-start;
+}
+
+.spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner::before,
+.spinner::after,
+.spinner span {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    border-radius: 50%;
+    animation: orbit 2s infinite ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.spinner::after {
+    animation-delay: -0.66s;
+}
+
+.spinner span {
+    animation-delay: -1.33s;
+}
+
+@keyframes orbit {
+    0% {
+        transform: translateX(20px) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateX(-20px) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(20px) scale(1);
+        opacity: 0.7;
+    }
+}

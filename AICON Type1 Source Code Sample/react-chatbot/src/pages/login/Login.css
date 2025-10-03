@@ -1,0 +1,65 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.title {
+    color: #292B2C;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 135%;
+}
+
+.button-login {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #EDF5FA;
+    width: 400px;
+    border: none;
+    color: #003153;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    cursor: pointer;
+}
+
+.aicon-logo {
+    display: flex;
+    width: 87px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 29/8;
+}
+
+.login-image {
+    display: flex;
+    width: 256px;
+    height: 256px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.terms {
+    width: 400px;
+    color: #8E9296;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
