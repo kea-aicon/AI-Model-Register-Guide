@@ -296,6 +296,47 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-06-2-blazor.png) 
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-06-2**  
+**Blazor 샘플 소스 코드  게시**  
+
+1. 설정 구성 후, Blazor 소스 코드를 게시합니다. 
+
+2. Publish 버튼을 클릭하고, 타겟으로 Folder를 선택한 다음 게시할 대상 폴더를 선택합니다.
+
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-06-3-blazor.png) 
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-06-3**  
+**Blazor 샘플 소스 코드 게시 및 압축**  
+
+1. 'Ready to publish' 메시지가 나타나면 Publish 버튼을 클릭합니다.  
+
+2. 게시 프로세스가 완료되면 aicon-type1-sourcecode-sample\blazor-chatbot-master\bin\Release\net9.0\publish로 이동하여 publish 폴더의 모든 파일을 ZIP 파일로 압축합니다.
+
+3. 압축 후 ZIP 파일을 AICON에 업로드합니다.
+</td>
+</tr>
+</table>
+
 ## Example Config File Blazor:  
 
 ```json
@@ -319,13 +360,11 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 
 ```
 
-## STEP-07-1
-
 **Blazor 소스 코드 빌드하기**  
 
 <h2 align="center"><a href="https://www.youtube.com/watch?v=WLASXqxzXj4">📺 TYPE 1-1 - VIDEO GUIDE (for Blazor)</a></h2>
 
-## STEP-06-2
+## STEP-07-1
 
 <table>
 <tr>
@@ -336,27 +375,57 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </td>
 <td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
    
-**STEP-06-2**  
-**Angular 샘플 소스 코드 설정**  
+**STEP-07-1**  
+**Config Angular Sample Source Code**  
 
-1. 다음 경로로 접근합니다: \angular-chatbot\src\assets\configs\configs.json  
+1. 다음 파일 경로에 접근합니다: \angular-chatbot\src\assets\configs\configs.json  
 
-2. 해당 소스 코드 설정을 귀하의 모델에 맞게 변경합니다.  
-  
-// Provider's AI chatbot API  
-apiEndPoint: "",  
-// API endpoint for AICON  
-aiConApiEndpoint: "https://api.aicon.or.kr/api",  
-// Client ID for authentication that provided when provider registers an AI model  
-clientID: "", // from S-05  
-// Client secret for authentication that provided when registers an AI model  
-clientSecret: "", // from S-05  
-// Grant type for authentication  
-authenGrantType: "authorization_code",  
-// Grant type for refreshing the token  
-refreshGrantType: "refresh_token",  
-// Login page URL for AICON  
-aiConLogin: "https://aicon.or.kr/auth/login"  
+2. 모델과 호환되도록 소스 코드 구성을 변경합니다.
+ 
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-07-2-1-angular.png)  
+![AICON](./Images/STEP-07-2-2-angular.png)
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-07-2**  
+**Angular 샘플 소스 코드 설치 및 빌드**  
+
+소스 코드의 패키지 설치: IDE 터미널을 열고 npm install --force 명령어를 실행하여 프로젝트 의존성을 설치합니다.  
+
+패키지 설치 후, IDE 터미널에서 "ng build" 명령어를 실행하여 소스 코드를 빌드합니다.
+ 
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-07-3-1-angular.png)  
+![AICON](./Images/STEP-07-3-2-angular.png)
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-07-3**  
+**파일 압축 및 업로드**  
+
+1. 빌드가 완료되면 Dist > ai-chatbot > browser 디렉토리로 이동합니다.  
+
+2. browser 폴더의 모든 내용을 ZIP 파일로 압축합니다.
+
+3. 압축된 파일을 AICON에 업로드합니다.
+ 
 </td>
 </tr>
 </table>
@@ -375,13 +444,103 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 }
 ```
 
-## STEP-07-2
-
 **Angular 소스 코드 빌드하기**  
 
 <h2 align="center"><a href="https://www.youtube.com/watch?v=7SLnUSaX3GA">📺 TYPE 1-2 - VIDEO GUIDE (for Angular)</a></h2> 
 
 ## STEP-08
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-08-1-react.png) 
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-08-1**  
+**React 샘플 소스 코드 구성**  
+
+1. 다음 파일 경로에 접근합니다: \react-chatbot\.env  
+
+2. 모델과 호환되도록 소스 코드 구성을 변경합니다.
+ 
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-08-2-1-react.png)  
+![AICON](./Images/STEP-08-2-2-react.png)
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-08-2**  
+**React 샘플 소스 코드 설치 및 빌드**  
+
+1. 소스 코드의 패키지 설치: IDE 터미널을 열고 npm install --force 명령어를 실행하여 프로젝트 의존성을 설치합니다.  
+
+2. 패키지 설치 후, IDE 터미널에서 "npm run build" 명령어를 실행하여 소스 코드를 빌드합니다.
+ 
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="60%">
+
+![AICON](./Images/STEP-08-3-1-react.png)  
+![AICON](./Images/STEP-08-3-2-react.png)
+
+</td>
+<td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
+   
+**STEP-08-3**  
+**파일 압축 및 업로드**  
+
+1. 빌드가 완료되면 react-chatbot-master\dist 디렉토리로 이동합니다.  
+
+2. browser 폴더의 모든 내용을 ZIP 파일로 압축합니다.  
+
+3. 압축된 파일을 AICON에 업로드합니다.  
+ 
+</td>
+</tr>
+</table>
+
+## Example Config File env React:
+
+```
+
+   # Provider's AI chatbot API
+   VITE_API_ENDPOINT=https://api-chatbot.aicon.or.kr
+   # API endpoint for KAB
+   VITE_AICON_API_ENDPOINT=https://api.aicon.or.kr/api
+   
+   # Client ID for authentication that provided when provider registers an AI model
+   VITE_CLIENT_ID=MjAyNTEwMDMwNjMzMjlfZmU3OTg0OGYxMDFjNDBhNmFlZGE3MTE4ZWY5MDJhNGY=
+   
+   # Client secret for authentication that provided when registers an AI model
+   VITE_CLIENT_SECRET=LvMA7x0FCEKxAhKkePQDUkzDZQLPwfxal8NlLWQ0KuYXHFksVJoEzc55dFgpjDPF
+   
+   # Grant type for authentication
+   VITE_AUTHEN_GRANT_TYPE=authorization_code
+   
+   # Grant type for refreshing the token
+   VITE_REFRESH_GRANT_TYPE=refresh_token
+   
+   # Login page URL for KAB
+   VITE_AICON_LOGIN=https://aicon.or.kr/auth/login
+
+```
+
+## STEP-09
 <table>
 <tr>
 <td width="60%">
@@ -391,7 +550,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </td>
 <td width="40%" valign="top" style="background-color:#f2f2f2; padding:15px; border-radius:10px;">
    
-**STEP-08**   
+**STEP-09**   
 
 1. 모델 상태 확인 API 입력 (*필수)  
    [/api/Provider/is-alive](https://dev-api.aicon.or.kr/swagger/index.html)  
