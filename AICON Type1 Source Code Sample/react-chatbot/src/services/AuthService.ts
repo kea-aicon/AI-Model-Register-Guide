@@ -91,6 +91,20 @@ class AuthService {
     // Check if the current time is greater than the expiration time
     return Date.now() > expirationTime;
   }
+
+  /**
+   * Get the userid from token
+   * @returns userid
+   */
+  getUserIdFromToken(): string | null {
+    try {
+      const payload = JSON.parse(atob(this.getAccessToken().split('.')[1]));
+      const key = "http://schemas.microsoft.com/ws/2008/06/identity/claims/userdata";
+      return payload[key] || null;
+    } catch (e) {
+      return null;
+    }
+  }
 }
 
 export default new AuthService();

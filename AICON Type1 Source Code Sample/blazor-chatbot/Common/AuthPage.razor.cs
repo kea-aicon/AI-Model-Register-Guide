@@ -8,9 +8,9 @@ namespace BlazorChatApp.Common
         [Inject] protected IJSRuntime JS { get; set; }
         [Inject] protected RequestInterceptor RequestInterceptor { get; set; }
         [Inject] protected NavigationManager Navigation { get; set; }
-        public AuthPage() 
-        { 
-            
+        public AuthPage()
+        {
+
         }
         /// <summary>
         /// Define auth guard for home and chatbot page
@@ -22,9 +22,28 @@ namespace BlazorChatApp.Common
             var refreshToken = await JS.InvokeAsync<string>("localStorage.getItem", "refresh_token");
             var currentPath = Navigation.ToBaseRelativePath(Navigation.Uri).ToLower();
 
+            // Get the URL path
+            var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
+            var queryParams = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
             // If access token is present, user is authenticated
             if (!string.IsNullOrEmpty(accessToken))
             {
+                // Extract the 'userid' parameter from the query string
+                var useridParam = queryParams["userid"];
+                if (!string.IsNullOrWhiteSpace(useridParam))
+                {
+                    //Get userid from token
+                    var userId = await RequestInterceptor.GetUserIdFromToken(accessToken);
+                    if (userId != useridParam)
+                    {
+                        //Handler this case login different account (before login with another account) then use model
+                        await RequestInterceptor.RemoveTokenAsync();
+                        Navigation.NavigateTo("/login", forceLoad: true);
+                        return;
+                    }
+                }
+
                 // If you are on Home page, do not redirect
                 if (currentPath != "")
                 {
@@ -34,9 +53,6 @@ namespace BlazorChatApp.Common
             }
             else
             {
-                // Get the URL path
-                var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
-                var queryParams = System.Web.HttpUtility.ParseQueryString(uri.Query);
                 // Extract the 'code' parameter from the query string
                 var code = queryParams["code"];
                 // If the 'code' parameter is present, attempt to get a token

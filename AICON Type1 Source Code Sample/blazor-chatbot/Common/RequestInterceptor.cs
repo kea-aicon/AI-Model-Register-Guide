@@ -1,6 +1,8 @@
 ﻿using BlazorChatApp.Service.ChatBot;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 
@@ -74,7 +76,7 @@ namespace BlazorChatApp.Common
                 if (!TokenExpired(refreshToken))
                 {
                     // If refresh token is valid, get a new access token using the refresh token
-                    await GetTokenAsync(null, true);
+                    await GetTokenAsync(refreshToken, true);
                     return true;
                 }
                 else
@@ -172,6 +174,25 @@ namespace BlazorChatApp.Common
         {
             await JS.InvokeVoidAsync("localStorage.removeItem", "access_token");
             await JS.InvokeVoidAsync("localStorage.removeItem", "refresh_token");
+        }
+
+        /// <summary>
+        /// Get user id from token
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public async Task<string?> GetUserIdFromToken(string token)
+        {
+            try
+            {
+                var handler = new JwtSecurityTokenHandler();
+                var jwtToken = handler.ReadJwtToken(token);
+                return jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.UserData)?.Value;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

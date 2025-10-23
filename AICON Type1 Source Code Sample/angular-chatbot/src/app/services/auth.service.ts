@@ -57,4 +57,17 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('refresh_token');
   }
+
+  /**
+   * Get the userid from token
+  */
+  getUserIdFromToken(token: string): string | null {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1])); // decode playload
+      const key = "http://schemas.microsoft.com/ws/2008/06/identity/claims/userdata";
+      return payload[key] || null;
+    } catch (error) {
+      return null;
+    }
+  }
 }

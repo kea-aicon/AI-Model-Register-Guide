@@ -46,7 +46,7 @@ namespace BlazorChatApp.Service.ChatBot
                     { "client_id", clientId },
                     { "client_secret", clientSecret },
                     { "grant_type", isRefresh ? _configuration["DomainSettings:refreshGrantType"] : _configuration["DomainSettings:authenGrantType"] },
-                    { "code", string.IsNullOrEmpty(code) ? "" : code },
+                    { isRefresh ? "refresh_token" : "code", string.IsNullOrEmpty(code) ? "" : code },
                     { "redirect_uri", new Uri(_navigationManager.Uri).GetLeftPart(UriPartial.Authority) }
                 };
                 var content = new FormUrlEncodedContent(parameters);
