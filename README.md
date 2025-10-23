@@ -337,7 +337,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
-## Example Config File Blazor:  
+## Example Config File Blazor for Product Environment 'https://aicon.or.kr':  
 
 ```json
 {
@@ -355,6 +355,29 @@ aiConLogin: "https://aicon.or.kr/auth/login"
     "authenGrantType": "authorization_code",
     "refreshGrantType": "refresh_token",
     "aiconLogin": "https://aicon.or.kr/auth/login"
+  }
+}
+
+```
+
+## Example Config File Blazor for Develop Environment 'https://dev.aicon.or.kr':  
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "DomainSettings": {
+    "apiEndPoint": "https://api-kab-chatbot.ominext.dev",
+    "aiconApiEndpoint": "https://dev-api.aicon.or.kr/api",
+    "clientID": "MjAyNTA3MTExMDA4MzhfZTI4NWQ2NDllZjc2NDQxZjg4MWQzYTFhNTAwMmZiMDA=",
+    "clientSecret": "pMrZJAJc31+RdcbNAKPtHusiba2RggVTYI+aRkm1AlF6XqQrJ90f6adPu+bAYvR4",
+    "authenGrantType": "authorization_code",
+    "refreshGrantType": "refresh_token",
+    "aiconLogin": "https://dev.aicon.or.kr/auth/login"
   }
 }
 
@@ -430,7 +453,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
-## Example Config File:
+## Example Config File for Production Environment 'https://aicon.or.kr': 
 
 ```json
 {
@@ -441,6 +464,20 @@ aiConLogin: "https://aicon.or.kr/auth/login"
     "authenGrantType": "authorization_code",
     "refreshGrantType": "refresh_token",
     "aiConLogin": "https://aicon.or.kr/auth/login"
+}
+```
+
+## Example Config File for Develop Environment 'https://dev.aicon.or.kr': 
+
+```json
+{
+    "apiEndPoint": "https://api-kab-chatbot.ominext.dev",
+    "aiConApiEndpoint": "https://dev-api.aicon.or.kr/api",
+    "clientID": "",
+    "clientSecret": "",
+    "authenGrantType": "authorization_code",
+    "refreshGrantType": "refresh_token",
+    "aiConLogin": "https://dev.aicon.or.kr/auth/login"
 }
 ```
 
@@ -514,13 +551,13 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
-## Example Config File env React:
+## Example Config File env React for Product Environment 'https://aicon.or.kr':
 
 ```
 
    # Provider's AI chatbot API
    VITE_API_ENDPOINT=https://api-chatbot.aicon.or.kr
-   # API endpoint for KAB
+   # API endpoint for AICON
    VITE_AICON_API_ENDPOINT=https://api.aicon.or.kr/api
    
    # Client ID for authentication that provided when provider registers an AI model
@@ -535,8 +572,34 @@ aiConLogin: "https://aicon.or.kr/auth/login"
    # Grant type for refreshing the token
    VITE_REFRESH_GRANT_TYPE=refresh_token
    
-   # Login page URL for KAB
+   # Login page URL for AICON
    VITE_AICON_LOGIN=https://aicon.or.kr/auth/login
+
+```
+
+## Example Config File env React for Develop Environment 'https://dev.aicon.or.kr':
+
+```
+
+   # Provider's AI chatbot API
+   VITE_API_ENDPOINT=https://api-kab-chatbot.ominext.dev
+   # API endpoint for AICON
+   VITE_AICON_API_ENDPOINT=https://dev-api.aicon.or.kr/api
+   
+   # Client ID for authentication that provided when provider registers an AI model
+   VITE_CLIENT_ID=MjAyNTEwMDMwNjMzMjlfZmU3OTg0OGYxMDFjNDBhNmFlZGE3MTE4ZWY5MDJhNGY=
+   
+   # Client secret for authentication that provided when registers an AI model
+   VITE_CLIENT_SECRET=LvMA7x0FCEKxAhKkePQDUkzDZQLPwfxal8NlLWQ0KuYXHFksVJoEzc55dFgpjDPF
+   
+   # Grant type for authentication
+   VITE_AUTHEN_GRANT_TYPE=authorization_code
+   
+   # Grant type for refreshing the token
+   VITE_REFRESH_GRANT_TYPE=refresh_token
+   
+   # Login page URL for AICON
+   VITE_AICON_LOGIN=https://dev.aicon.or.kr/auth/login
 
 ```
 
