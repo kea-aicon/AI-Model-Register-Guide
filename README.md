@@ -453,7 +453,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
-## Example Config File for Production Environment 'https://aicon.or.kr': 
+## Example Config File Angular for Production Environment 'https://aicon.or.kr': 
 
 ```json
 {
@@ -467,7 +467,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 }
 ```
 
-## Example Config File for Develop Environment 'https://dev.aicon.or.kr': 
+## Example Config File Angular for Develop Environment 'https://dev.aicon.or.kr': 
 
 ```json
 {
@@ -551,7 +551,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 </tr>
 </table>
 
-## Example Config File env React for Product Environment 'https://aicon.or.kr':
+## Example Config File .env React for Product Environment 'https://aicon.or.kr':
 
 ```
 
@@ -577,7 +577,7 @@ aiConLogin: "https://aicon.or.kr/auth/login"
 
 ```
 
-## Example Config File env React for Develop Environment 'https://dev.aicon.or.kr':
+## Example Config File .env React for Develop Environment 'https://dev.aicon.or.kr':
 
 ```
 
